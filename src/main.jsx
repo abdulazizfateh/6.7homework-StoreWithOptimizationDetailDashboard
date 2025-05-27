@@ -4,11 +4,15 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css'
 // Lazy Import
 const App = lazy(() => import("./App.jsx"));
+// Suspense Loading (Custom)
+import Suspense from './utils'
 
 createRoot(document.getElementById('root')).render(
   // <StrictMode>
   <BrowserRouter>
-    <App />
+    <Suspense>
+      <App />
+    </Suspense>
   </BrowserRouter>
   // </StrictMode>,
 )
